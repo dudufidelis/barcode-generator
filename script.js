@@ -1,6 +1,18 @@
-function genBarCode() {
+function genBarcode() {
+    const format = document.querySelector("#format").value;
     const code = document.querySelector("#code").value;
-    JsBarcode("#barcode", code);
+    const height = document.querySelector("#height").value;
+    const barcodeLabel = document.querySelector("#barcode-label").value;
+    const background = document.querySelector("#background").value;
+    const lineColor = document.querySelector("#line-color").value;
+    
+    JsBarcode("#barcode", code, {
+        format: format,
+        height: height,
+        displayValue: barcodeLabel,
+        background: background,
+        lineColor: lineColor
+    });
 }
 
 function downloadBarcode() {
