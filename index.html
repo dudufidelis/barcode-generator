@@ -24,22 +24,50 @@
             </div>
             <p>Gerar códigos de barras nunca foi tão fácil. Use esta ferramenta simples para criar códigos de barras personalizados para os seus produtos.</p>
             <div class="nav-btn">
-                <a href="#conf-unico">Unico</a>
-                <a href="#conf-lote">Em lote</a>
+                <a href="#start">Começar</a>
             </div>
         </div>
     </section>    
-    <section id="conf-unico">
-        <h1>Geração unica</h1>
-        <input type="text" id="code">
-        <button onclick="genBarCode()">Gerar</button>
-        <button onclick="downloadBarcode()">Baixar Código de Barras</button>
-        <h3>Código de Barras</h3>
-        <img id="barcode">
-    </section>
-    <section id="conf-lote">
-        <h1>Geração em lote
-        </h1>
+    <section id="start">
+        <div class="barcode-container">
+            <div class="barcode-config">
+                <h3>Configuração inicial</h3>
+                <label for="format">Formato:</label>
+                <select name="format" id="format">
+                    <option value="CODE128">code128</option>
+                    <option value="EAN13">ean13</option>
+                    <option value="EAN8">ean8</option>
+                    <option value="CODE39">code39</option>
+                    <option value="ITF14">itf-14</option>
+                    <option value="MSI">msi</option>
+                    <option value="Pharmacode">pharmacode</option>
+                    <option value="codabar">codabar</option>
+                </select>
+                <label for="code">Código</label>
+                <input name="code" type="text" id="code">
+                <label for="height">Altura</label>
+                <select name="height" id="height">
+                    <option value="150">Alto</option>
+                    <option value="75">Médio</option>
+                    <option value="25">Pequeno</option>
+                </select>
+                <label for="barcode-label">Mostrar Valor</label>
+                <select name="barcode-label" id="barcode-label">
+                    <option value="true">Sim</option>
+                    <option value="false">Não</option>
+                </select>
+                <label for="background">Selecione a cor de fundo</label>
+                <input id="background" type="color" name="background" value="#ffffff">
+                <label for="line-color">Selecione a cor da linha</label>
+                <input id="line-color" type="color" name="line-color" value="#00000">
+                <button onclick="genBarcode()">Gerar</button>
+            </div>
+            <div class="barcode-download">
+                <button onclick="downloadBarcode()">Baixar Código de Barras</button>
+                <h3>Código de Barras</h3>
+                <img id="barcode">
+            </div>
+        </div>
     </section>
 </body>
 </html>
