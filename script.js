@@ -8,6 +8,8 @@ function genBarcode() {
     
     JsBarcode("#barcode", code, {
         format: format,
+        fontSize: 12,
+        fontOptions: "bold italic",
         height: height,
         displayValue: barcodeLabel,
         background: background,

@@ -2,11 +2,25 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: 'Inclusive Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 172, 43);
+    border-radius: 4px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(4, 139, 38);
+}
+
 body {
-    scroll-behavior: smooth;
     background-size: 52px 52px;
     background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.150), rgba(0, 0, 0, 0.150) 6px, #ffffff 2.6px, #ffffff);
 }
@@ -33,6 +47,7 @@ section {
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.315);
     position: relative;
+    cursor: default;
 }
 
 .main img {
@@ -84,6 +99,15 @@ section {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.171)
 }
 
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+}
+
 .barcode-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -94,28 +118,57 @@ section {
     border: 1px solid rgba(0, 0, 0, 0.37);
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.315);
-    width: 800px;
+    width: 900px;
 }
 
 .barcode-config, .barcode-download {
-    background-color: rgb(21, 147, 151);
     display: flex;
     flex-direction: column;
-    text-align: left;
-    margin: 0.5rem;
-    
+    align-items: center;
+    padding: 1rem;
 }
 
-.barcode-config input, select {
-    border: 1px solid rgba(128, 128, 128, 0.322);
-    outline: 0;
-    
+.barcode-config {
+    border-right: 1px dashed rgba(0, 0, 0, 0.178);
 }
 
 .barcode-download {
-    background-color: red;
+    border-left: 1px dashed rgba(0, 0, 0, 0.178);
+    justify-content: space-between;
 }
 
+.barcode-config input, select {
+    border: 1px solid rgba(128, 128, 128, 0.226);
+    outline: 0;
+    width: 60%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.barcode-config input[type="text"] {
+    cursor: text;
+}
+
+.barcode-config input[type="color"] {
+   padding: 0;
+   width: 30%;
+}
+
+button {
+    background-color: rgb(0, 172, 43);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.192);
+    padding: 0.5rem 1.5rem;
+    color: #ffffff;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#barcode {
+    width: 100%;
+}
 
 
 @media (max-width: 767px) {
@@ -146,14 +199,13 @@ section {
     .barcode-container {
         display: grid;
         grid-template-columns: auto;
-        background-color: #ffffff;
-        height: fit-content;
-        padding: 1rem;
-        margin-bottom: 100px;
-        border: 1px solid rgba(0, 0, 0, 0.37);
-        border-radius: 5px;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.315);
         width: 800px;
+        height: 100vh;
     }
-    
+
+    .barcode-config, .barcode-download {
+        border: none;
+        width: 100%;
+        margin: 25px auto;
+    }
 }
