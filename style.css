@@ -166,6 +166,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    opacity: 0.9;
+}
+
 #barcode {
     width: 100%;
 }
