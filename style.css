@@ -85,17 +85,37 @@ section {
 }
 
 .barcode-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #ffffff;
+    height: fit-content;
+    padding: 1rem;
+    margin-bottom: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.315);
+    width: 800px;
+}
 
+.barcode-config, .barcode-download {
+    background-color: rgb(21, 147, 151);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0.5rem;
+    
+}
+
+.barcode-config input, select {
+    border: 1px solid rgba(128, 128, 128, 0.322);
+    outline: 0;
+    
 }
 
 .barcode-download {
-
+    background-color: red;
 }
 
-.barcode-img {
-    
-}
 
 
 @media (max-width: 767px) {
@@ -122,4 +142,18 @@ section {
     .nav-btn a {
         margin-inline: 12px;
     }
+
+    .barcode-container {
+        display: grid;
+        grid-template-columns: auto;
+        background-color: #ffffff;
+        height: fit-content;
+        padding: 1rem;
+        margin-bottom: 100px;
+        border: 1px solid rgba(0, 0, 0, 0.37);
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.315);
+        width: 800px;
+    }
+    
 }
