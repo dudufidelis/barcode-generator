@@ -23,7 +23,8 @@ function genBarcode(code, format, height, barcodeLabel, background, lineColor) {
 function downloadBarcode() {
     const code = document.querySelector("#code").value;
     const barcode = document.querySelector("#barcode");
-    if (!code === "") {
+    console.log(code)
+    if (code !== "") {
         const a = document.createElement('a');
         a.href = barcode.src;
         a.download = code + "-code.png";
