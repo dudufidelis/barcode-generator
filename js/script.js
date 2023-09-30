@@ -1,3 +1,5 @@
+
+
 function getConfig() {
     const code = document.querySelector("#code").value;
     const format = document.querySelector("#format").value;
@@ -20,19 +22,25 @@ function genBarcode(code, format, height, barcodeLabel, background, lineColor) {
     });
 }
 
-function downloadBarcode() {
+
+
+downloadBarcode = 
+document.querySelector("#downloadButton").addEventListener("click", () => {
     const code = document.querySelector("#code").value;
     const barcode = document.querySelector("#barcode");
-    console.log(code)
+    const downloadButton = document.querySelector("#downloadButton");
+    const input = document.querySelector("#code")
     if (code !== "") {
         const a = document.createElement('a');
         a.href = barcode.src;
         a.download = code + "-code.png";
         a.click();
     } else {
-        alert("Por favor, gere o código de barras antes de baixá-lo.");
+        downloadButton.classList.add("anim-error");
+        input.classList.add("after-error");
     }
-}
+});
+
 
 
 
