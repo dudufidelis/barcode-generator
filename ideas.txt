@@ -2,5 +2,5 @@
 - ads with google adsense
 - Qr code generator (at landing, add a giant qr and bar code to be a button)
 - Change name of project
-- Make the footer
+- Make the footer ( w/ who am i, link to github and my website)
 

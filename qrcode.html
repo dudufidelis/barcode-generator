@@ -6,18 +6,24 @@
     <title>Gencode | Gerar Codigo QR ou Barras Online e Grátis</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
-    <script defer src="/js/script.js"></script>
+    <script defer src="js/qrcode.js"></script>
     <!-- Font inclusive sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap" rel="stylesheet">
     <!-- qrcode.js-->
+    <script type="text/javascript" src="/js/qrcodejs/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/qrcodejs/qrcode.min.js"></script>
 </head>
+
 <body>
     <section>
         <div class="qrcode-container">
-            
+            <input id="text" type="text" placeholder="Digite a url aqui!"/>
+            <button id="makecode-btn">Gerar</button>
+            <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
         </div>
     </section> 
+    
 </body>
 </html>
