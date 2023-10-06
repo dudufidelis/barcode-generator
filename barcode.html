@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Código de Barras</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+    <script defer src="/js/barcode.js"></script>
+    <!-- Font inclusive sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap" rel="stylesheet">
+     <!-- jsBarCode-->
+    <script defer src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/jsbarcode@3.8.0/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+    <section>
+        <div class="barcode-container">
+            <div class="barcode-config">
+                <h3>Configuração</h3>
+                <div class="form-group">
+                    <label for="code">Código:</label>
+                    <input name="code" type="text" id="code" placeholder="Digite aqui!" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label for="format">Formato:</label>
+                    <select name="format" id="format">
+                        <option value="CODE128">code128</option>
+                        <option value="EAN13">ean13</option>
+                        <option value="EAN8">ean8</option>
+                        <option value="CODE39">code39</option>
+                        <option value="ITF14">itf-14</option>
+                        <option value="MSI">msi</option>
+                        <option value="Pharmacode">pharmacode</option>
+                        <option value="codabar">codabar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="height">Altura da barra:</label>
+                    <select name="height" id="height">
+                        <option value="130">Alto</option>
+                        <option value="75" selected>Médio</option>
+                        <option value="25">Pequeno</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="barcode-label">Mostrar código:</label>
+                    <select name="barcode-label" id="barcode-label">
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="background">Selecione a cor de fundo:</label>
+                    <input id="background" type="color" name="background" value="#ffffff">
+                </div>
+                <div class="form-group">
+                    <label for="line-color">Selecione a cor da linha:</label>
+                    <input id="line-color" type="color" name="line-color">
+                </div>
+                <button onclick="getConfig()">Gerar</button>
+            </div>
+            <div class="barcode-download">
+                <h3>Prévia</h3>
+                <img src="/assets/barcode.png" id="barcode">
+                <button onclick="downloadBarcode()">Download</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
